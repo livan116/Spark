@@ -7,6 +7,7 @@ const {validationResult} = require('express-validator')
 //Register a new user
 
 exports.registerUser = async(req,res) => {
+    console.log("hello")
     const {firstname,lastname,email,password} = req.body;
 
     //validation results
@@ -17,7 +18,9 @@ exports.registerUser = async(req,res) => {
 
     try{
         //check if user already exists
-        const user = await User.findOne({email})
+    
+        let user = await User.findOne({email})
+        console.log(user)
         if(user){
             return res.status(400).json({success:false,message:"User Already Exists"});
         }
@@ -25,14 +28,14 @@ exports.registerUser = async(req,res) => {
         //hash password before pushing to db
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password,salt);
-
+  
         user = new User({
             firstname,
             lastname,
             email,
             password:hashedPassword
         })
-
+    
         await user.save();
         res.status(200).json({success:true,message:"User Register Successfully"});
     }
@@ -60,11 +63,92 @@ exports.loginUser = async(req,res) => {
     }
 
     //if everything is correct, generate token and send 
-    const token = jwt.sign(user.email,process.env.JWT_SECRET)
+    const token = jwt.sign({email:user.email,id:user._id},process.env.JWT_SECRET);
+
     res.status(200).json({success:true,message:"Login Successfull!",token})
     }
     catch{
         res.status(500).json({success:false,message:"Server Error"});
     }
 }
+
+
+exports.getUser = async (req, res) => {
+    try {
+      const userId = req.user.id;
+      const user = await User.findById(userId).select("-password");
+      if (!user) {
+        return res
+          .status(404)
+          .json({ success: false, message: "User not found" });
+      }
+      res.status(200).json({ success: true, user });
+    } catch (error) {
+      res.status(500).json({ message: "Server Error" });
+    }
+  };
+
+  exports.updateUser = async (req, res) => {
+    const { firstname, lastname, email, password } = req.body;
+    const userId = req.user.id; //extracted from token via middleware
+    try {
+      const user = await User.findById(userId);
+      if (!user) {
+        res.status(404).json({ success: false, message: "User not found" });
+      }
+  
+      //update name if provided
+      if (firstname && firstname !== user.firstname) {
+        user.firstname = firstname;
+      }
+      if (lastname && lastname !== user.lastname) {
+        user.lastname = lastname;
+      }
+  
+      //update email if provided
+  
+      if (email && email !== user.email) {
+        const existingEmail = await User.findOne({ email });
+        if (existingEmail) {
+          return res
+            .status(400)
+            .json({ success: false, message: "Email already in use" });
+        }
+        user.email = email;
+      }
+  
+      //if number is provided
+
+      console.log(user.password)
+  
+      if (password && mobile !== user.mobile) {
+        const existingMobile = User.findOne({ mobile });
+        if (existingMobile) {
+          res
+            .status(400)
+            .json({ success: false, message: "Mobile already in use" });
+        }
+        user.mobile = mobile;
+      }
+  
+      await user.save();
+      res.status(200).json({success:true,message:"User updated successfully"})
+    } catch (error) {
+      return res.status(500).json({ success: false, message: "Server Error" });
+    }
+  };
+  
+  exports.deleteUser = async (req,res) =>{
+      const userId = req.user.id;
+      try{
+          const user = await User.findByIdAndDelete(userId);
+          if(!user){
+              return res.status(404).json({success:false,message:"User not found"});
+          }
+          return res.status(200).json({success:true,message:"User deleted successfully"})
+      }
+      catch(error){
+          return res.status(500).json({success:false,message:"Sever Error"})
+      }
+  }
 
