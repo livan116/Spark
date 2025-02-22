@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const userRoutes = require('./Routes/user.routes');
 const linkRoutes = require('./Routes/link.routes')
+const analyticsRoutes = require('./Routes/analytics.routes')
 
 dotenv.config();
 const app = express()
@@ -12,7 +13,7 @@ app.use(cors())
 
 app.use("/api/user", userRoutes);
 app.use("/api/links", linkRoutes);
-
+app.use("/api/analytics",analyticsRoutes);
 
 app.get('/',(req,res)=>{
     res.send("Hi There!")

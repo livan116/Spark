@@ -8,7 +8,7 @@ const linkSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["social", "shop"], // Default is "social"
+        enum: ["social", "shop","cta"], // Default is "social"
         default: "social",
     },
     title: {
@@ -22,6 +22,10 @@ const linkSchema = new mongoose.Schema({
     platform: {
         type: String, // e.g., "Instagram", "YouTube", "Facebook"
         required: true,
+    },
+    clicks: {
+        type: Number,
+        default: 0, // Track the number of times a link is clicked
     },
     createdAt: {
         type: Date,

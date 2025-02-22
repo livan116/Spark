@@ -1,6 +1,6 @@
 
 const express = require('express')
-const { addLink, getLinks, updateLink, deleteLink }  = require('../Controllers/link.controller.js');
+const { addLink, getLinks, updateLink, deleteLink, handleRedirect }  = require('../Controllers/link.controller.js');
 const auth = require('../Middleware/auth.middleware');
 
 const router = express.Router();
@@ -16,5 +16,8 @@ router.put("/:id", auth, updateLink);
 
 // Delete a link
 router.delete("/:id", auth, deleteLink);
+
+//redirect a link
+router.get("/redirect/:id", auth, handleRedirect);
 
 module.exports = router;
