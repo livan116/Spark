@@ -16,7 +16,7 @@ app.use("/api/links", linkRoutes);
 app.use("/api/analytics",analyticsRoutes);
 
 app.get('/',(req,res)=>{
-    res.send("Hi There!")
+    res.send("Hi There!");
 })
 
 const PORT = process.env.PORT || 4000;

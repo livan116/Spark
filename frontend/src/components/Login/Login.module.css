@@ -1,0 +1,182 @@
+.parent_register {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .right_register {
+    width: 70%;
+  }
+  
+  .title_spark {
+    display: flex;
+    padding-top: 2vw;
+    padding-left: 3vw;
+    gap: 5px;
+    font-family: Plus Jakarta Sans;
+    color: #000000;
+  }
+  .title_spark img {
+    height: 2vw;
+    width: 2vw;
+  }
+  
+  .register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .registerTitle {
+    font-family: Poppins;
+    letter-spacing: -2px;
+    font-size: 3vw;
+    font-weight: 800;
+  }
+  
+  .formLogin{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .form{
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+      width: 35vw;
+      margin-top: 5vh;
+  
+  }
+  .loginFields{
+  
+      position: relative;
+  }
+  .loginFields input{
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #EFF0EC;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+  }
+  .loginFields label{
+      font-family: Poppins;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #666666;
+  }
+  .loginFields .icon{
+      position: absolute;
+      font-size: 1.5rem;
+      right: 10px;
+      top: 5vh;
+      color: #666666;
+      cursor: pointer;
+  }
+  
+  .loginBtn{
+      margin-top: 10vh;
+      padding: 15px;
+      border-radius: 50px;
+      border: none;
+      outline: none;
+      background-color: #28A263;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFFFFF;
+  }
+  .loginBtn:hover{
+      background-color: #1E7C4D;
+      /* color: #E0E2D9; */
+      cursor: pointer;
+  }
+  
+  .forgotpassword{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5vh;
+      justify-content: center;
+      margin-top: 5vh;
+      margin-bottom: 15vh;
+      font-family: Inter;
+  }
+  
+  .forgotpassword a{
+      color: #28A263;
+      font-size: 1rem;
+      font-weight: 400;
+  }
+  .forgotpassword p{
+      font-family: 1rem;
+      font-weight: 400;
+      color: #000000;
+  }
+  .footer_register {
+      text-align: center;
+  }
+  .left_register {
+    width: 30%;
+    height: 100%;
+  }
+  .left_register img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  
+  @media screen and (max-width: 600px){
+      .left_register{
+          display: none;
+      }
+      .right_register{
+          width: 100%;
+          padding: 2vh;
+      }
+      .title_spark{
+          display: flex;
+          align-items: center;
+          padding-left: 1vw;
+      }
+      .title_spark img{
+          height: 5vw;
+          width: 5vw;
+      }
+      .title_spark h2{
+          font-size: 1.2rem;
+      }
+  
+      .register{
+          display: flex;
+          align-items: start;
+          margin-top: 5vh;
+      }
+  
+      .register p{
+          font-size: 2rem;
+          letter-spacing: -1.22px;
+      }
+      .form{
+          width: 100%;
+      }
+      .loginFields i{
+          top: 6vh;
+      }
+      .loginBtn{
+          margin-top: 3vh;
+      }
+      .forgotpassword a{
+          font-size: 0.8rem;
+      }
+      .forgotpassword p{
+          font-size: 0.8rem;
+      }
+      .footer_register{
+          font-size: 10px;
+      }
+  }

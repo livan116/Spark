@@ -28,14 +28,14 @@ exports.registerUser = async(req,res) => {
         //hash password before pushing to db
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password,salt);
-  
+        console.log(firstname)
         user = new User({
             firstname,
             lastname,
             email,
             password:hashedPassword
         })
-    
+        console.log(user)
         await user.save();
         res.status(200).json({success:true,message:"User Register Successfully"});
     }
