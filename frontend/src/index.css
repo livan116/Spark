@@ -7,3 +7,23 @@
 body{
   font-family: Plus Jakarta Sans;
 }
+
+:root {
+  --primary-color: #2F9E44;
+  --primary-hover: #2b8a3e;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --border-color: #e9ecef;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+}

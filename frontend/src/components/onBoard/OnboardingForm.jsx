@@ -1,5 +1,6 @@
 // OnboardingForm.jsx
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import styles from './OnboardingForm.module.css';
 import image from "../../assets/login.png"
 import spark from "../../assets/spark.png"
@@ -21,6 +22,8 @@ const categories = [
 const OnboardingForm = () => {
   const [username, setUsername] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,7 +74,7 @@ const OnboardingForm = () => {
               </div>
             </div>
             
-            <button type="submit" className={styles.continueButton}>
+            <button type="submit" className={styles.continueButton} onClick={()=>navigate('/main')}>
               Continue
             </button>
           </form>

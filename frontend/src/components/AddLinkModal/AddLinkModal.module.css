@@ -1,0 +1,266 @@
+/* AddLinkModal.module.css */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 16px;
+  }
+  
+  .modal {
+    background-color: white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    position: relative;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .modalHeader h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #4a5568;
+    padding: 4px;
+    line-height: 1;
+  }
+  
+  .tabGroup {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    background-color: #f8f9fa;
+    padding: 4px;
+    border-radius: 8px;
+  }
+  
+  .tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .tab.active {
+    background-color: #2F9E44;
+    color: white;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .inputGroup input:focus {
+    outline: none;
+    border-color: #2F9E44;
+  }
+  
+  .applications {
+    margin-bottom: 24px;
+  }
+  
+  .applications p {
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 12px;
+  }
+  
+  .appIcons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .appIcons img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  
+  /* PhonePreview.module.css */
+  .previewContainer {
+    padding: 24px;
+    background-color: white;
+    border-left: 1px solid #e9ecef;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .shareButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .shareButton:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .phoneFrame {
+    width: 280px;
+    height: 560px;
+    border: 12px solid #343a40;
+    border-radius: 32px;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+  }
+  
+  .phoneContent {
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .profileSection {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .previewAvatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    object-fit: cover;
+  }
+  
+  .username {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+  
+  .bio {
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .linksSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .linkButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #1a202c;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .linkButton:hover {
+    background-color: #e9ecef;
+  }
+  
+  .sparkBranding {
+    margin-top: auto;
+    padding: 16px;
+    text-align: center;
+    color: #4a5568;
+    opacity: 0.5;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 1200px) {
+    .previewContainer {
+      display: none;
+    }
+    
+    .pageContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modalOverlay {
+      padding: 8px;
+    }
+    
+    .modal {
+      padding: 16px;
+    }
+    
+    .header h1 {
+      font-size: 20px;
+    }
+    
+    .editor {
+      padding: 16px;
+    }
+    
+    .avatarUpload {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .uploadButton {
+      width: 100%;
+    }
+  }
+  

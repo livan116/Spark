@@ -1,0 +1,140 @@
+/* LinksPage.module.css */
+.pageContainer {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+  }
+  
+  .header {
+    margin-bottom: 32px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+  
+  .header p {
+    color: #4a5568;
+    font-size: 16px;
+  }
+  
+  .editor {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .profileSection {
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 24px;
+  }
+  
+  .profileSection h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a202c;
+  }
+  
+  .avatarUpload {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .uploadButton {
+    padding: 8px 16px;
+    background-color: #2F9E44;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .uploadButton:hover {
+    background-color: #2b8a3e;
+  }
+  
+  .input, .textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .input:focus, .textarea:focus {
+    outline: none;
+    border-color: #2F9E44;
+  }
+  
+  .textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .linkItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .linkItem:hover {
+    background-color: #e9ecef;
+  }
+  
+  .linkIcon {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .linkInput {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .addButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #2F9E44;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-top: 16px;
+  }
+  
+  .addButton:hover {
+    background-color: #2b8a3e;
+  }

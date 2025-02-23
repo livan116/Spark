@@ -1,0 +1,63 @@
+/* Sidebar.module.css */
+.sidebar {
+    background-color: white;
+    border-right: 1px solid #e9ecef;
+    height: 100vh;
+    position: fixed;
+    width: 240px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    padding: 8px 12px;
+    margin-bottom: 32px;
+  }
+  
+  .sparkLogo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2F9E44;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #4a5568;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .navItem:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .navItem.active {
+    background-color: #e9ecef;
+    color: #2F9E44;
+  }
+  
+  .navItem svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  }
